@@ -1,0 +1,14 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - name: Tweet action step
+        id: hello
+        uses: eamonnk418/tweeter-action@main
+        with:
+          who-to-greet: "Mona the Octocat"
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"

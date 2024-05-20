@@ -1,9 +1,25 @@
-# Ignore everything
+# Ignore everything by default
 *
 
-# Include just the go files
+# Do not ignore directories (necessary to allow the inclusion of specific files within directories)
+!*/
+
+# Include Go source files
 !**/*.go
 
-# Include just the go.mod and go.sum files
+# Include Go module files
 !go.mod
 !go.sum
+
+# Include project configuration and documentation files
+!.dockerignore
+!.gitignore
+!action.yml
+!Dockerfile
+!LICENSE
+!Makefile
+!README.md
+
+# Include GitHub-specific files and directories
+!.github/*
+!.github/**/*
